@@ -3,6 +3,12 @@ import java.util.Random;
 import java.lang.Math;
 
 public class Main {
+    public static void turnRobotRight(Robot rTr) {
+        rTr.turnLeft();
+        rTr.turnLeft();
+        rTr.turnLeft();
+    }
+
     public static void robotTurnToFaceDir(Robot rTurnfd, Direction gDir) {
         while (rTurnfd.getDirection() != gDir) {
             rTurnfd.turnLeft();
@@ -30,11 +36,8 @@ public class Main {
             garbage[c] = new Thing(ct, rand.nextInt(10), rand.nextInt(10));
         }
         Wall w = new Wall(ct, 0, 1, Direction.WEST);
-        try {
-            rb.move();
-        } catch (Exception e) {
-            // pass
-        }
+
+        
 
         for (Thing toPickUpG : garbage) {
             // while (toPickUpG.get) TODO: write this
